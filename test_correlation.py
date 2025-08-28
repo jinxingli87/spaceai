@@ -22,8 +22,10 @@ def lws_rbspice_loss_function_history(history,figname="tmp",ylim=[0,1]):
     plt.show()
 
 
-def lws_rbspice_correlation(y_test_reshaped, y_test_pred_reshaped, xrange=[4,9],figname="tmp",ek="148"):
+def lws_rbspice_correlation(y_test_reshaped, y_test_pred_reshaped, xrange=[4,9],vmax = None, figname="tmp",ek="148"):
     
+
+
     #y_test_pred = model.predict(X_test)
 
     #y_test_reshaped=y_test.reshape([-1])
@@ -53,6 +55,8 @@ def lws_rbspice_correlation(y_test_reshaped, y_test_pred_reshaped, xrange=[4,9],
         yk=int(yk)
         M_test[xk,yk]+=1
 
+    if vmax is None:
+        vmax = M_test.max()
 
     delta = dx
     extent = (xrange[0], xrange[1], yrange[0], yrange[1])
@@ -62,9 +66,9 @@ def lws_rbspice_correlation(y_test_reshaped, y_test_pred_reshaped, xrange=[4,9],
     X, Y = np.meshgrid(x, y)
 
     # Boost the upper limit to avoid truncation errors.
-    levels = np.arange(0, M_test.max(), 200.0)
+    levels = np.arange(0, vmax, 200.0)
 
-    norm = mpl.cm.colors.Normalize(vmax=M_test.max(), vmin=M_test.min())
+    norm = mpl.cm.colors.Normalize(vmax=vmax, vmin=M_test.min())
     #cmap = cm.PRGn
     cmap = mpl.cm.jet
 
@@ -73,7 +77,7 @@ def lws_rbspice_correlation(y_test_reshaped, y_test_pred_reshaped, xrange=[4,9],
 
     im = ax1.imshow(M_test.transpose(),  cmap=mpl.cm.jet,interpolation='none',#'bilinear',
                 origin='lower', extent=[xrange[0],xrange[1],yrange[0],yrange[1]],
-                vmax=M_test.max(), vmin=-M_test.min())
+                vmax=vmax, vmin=-M_test.min())
 
 
     ax1.plot(xrange,yrange,'r')
@@ -101,3 +105,4 @@ def lws_rbspice_correlation(y_test_reshaped, y_test_pred_reshaped, xrange=[4,9],
     cbar.set_label('# of samples', fontsize=20)
     plt.savefig(figname+".png", format="png", dpi=300)
     plt.show()
+    
