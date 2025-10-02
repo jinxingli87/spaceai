@@ -15,13 +15,30 @@ We benchmark and compare four neural network architectures:
 - **LSTM** (Long Short-Term Memory)  
 - **Transformer**  
 
+| Model           | Strengths                        | Limitations                            |
+| --------------- | -------------------------------- | -------------------------------------- |
+| **MLP**         | Fast, simple, easy to train      | Limited in capturing temporal features |
+| **CNN**         | Good at local feature extraction | Less effective on sequential patterns  |
+| **LSTM**        | Handles sequential dependencies  | Slower training, harder to tune        |
+| **Transformer** | Captures long-range dependencies | Requires more compute & tuning         |
+
+
+
 The models are trained using ion flux datasets from NASA missions and aim to improve **space weather forecasting**.
 
 📄 This project is associated with the publication:  
 > Li, J. et al. (2025). *Modeling ring current proton distribution using MLP, CNN, LSTM, and Transformer networks.* Frontiers in Astronomy and Space Science.  
 [🔗 Read the paper](https://doi.org/10.3389/fspas.2025.1629056)
+Citation: Li, J. et al. (2025). Modeling ring current proton distribution using MLP, CNN, LSTM, and Transformer networks. Frontiers in Astronomy and Space Science. https://doi.org/10.3389/fspas.2025.1629056
 
 ---
 
 ## 📂 Repository Structure
 
+spaceai/
+│── lws_training_display_torch_mlp_55keV.ipynb # MLP training notebook
+│── lws_training_display_torch_cnn_55keV_v2.0.ipynb # CNN training notebook
+│── lws_training_display_torch_lstm_268keV_v2.01.ipynb# LSTM training notebook
+│── lws_transformer_55keV_v1.7_2.ipynb # Transformer training notebook
+│── README.md # Project documentation
+│── LICENSE # Open source license
