@@ -29,7 +29,6 @@ The models are trained using ion flux datasets from NASA missions and aim to imp
 📄 This project is associated with the publication:  
 > Li, J. et al. (2025). *Modeling ring current proton distribution using MLP, CNN, LSTM, and Transformer networks.* Frontiers in Astronomy and Space Science.  
 [🔗 Read the paper](https://doi.org/10.3389/fspas.2025.1629056)
-Citation: Li, J. et al. (2025). Modeling ring current proton distribution using MLP, CNN, LSTM, and Transformer networks. Frontiers in Astronomy and Space Science. https://doi.org/10.3389/fspas.2025.1629056
 
 ---
 
