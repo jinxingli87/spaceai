@@ -32,12 +32,3 @@ The models are trained using ion flux datasets from NASA missions and aim to imp
 
 ---
 
-## 📂 Repository Structure
-
-spaceai/
-│── lws_training_display_torch_mlp_55keV.ipynb # MLP training notebook
-│── lws_training_display_torch_cnn_55keV_v2.0.ipynb # CNN training notebook
-│── lws_training_display_torch_lstm_268keV_v2.01.ipynb# LSTM training notebook
-│── lws_transformer_55keV_v1.7_2.ipynb # Transformer training notebook
-│── README.md # Project documentation
-│── LICENSE # Open source license
